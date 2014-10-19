@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="favicon.ico">
+    <title>Starter Template for Bootstrap</title>
+  </head>
+
+  <body>
+    <form data-bind="submit:addItem" role="form">
+      Add item: <input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"'>
+      <button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
+
+      <div class="ar-form-group">
+        <h1>Your Values</h1>
+        <select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems" class="input-lg"> </select>
+      </div>
+    
+      <button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
+      <button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+    
+    </form>
+
+    <script src="js/knockout.js"></script>
+    <script src="js/model.js"></script>
+        
+  </body>
+</html>

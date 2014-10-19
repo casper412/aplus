@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+    <title>Starter Template for Bootstrap</title>
+  </head>
+
+  <body>
+    <form action="test.do">
+      <div>
+        Add item:
+      </div>
+      <div>
+        <input type="text" value="nothing">
+      </div>
+      <button type="submit" class="btn btn-default" data-bind="enable: itemToAdd().length > 0">Add</button>
+      
+      <div>
+        <h1>Your Values</h1>
+        <select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems" class="input-lg"> </select>
+      </div>
+          
+      <div>
+        <button>Select</button>
+        <button>Remove</button>
+        <button>Sort</button>
+      </div>
+    </form>
+            
+        
+
+  </body>
+</html>

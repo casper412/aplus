@@ -1,0 +1,107 @@
+= Overview =
+
+So, what I am thinking is we will go through building a basic PHP app for the class focusing on the data collection
+you need. So, my thought is I will go over the general stuff about building a PHP web site, and your homework will be 
+building the actual application. I have never done this before; so, we'll see how it goes. This is entirely for you; so, 
+we can speed up, slow down, skip, or take as many tangents as you want.
+
+This is purely functional - or like tech school, i.e. we will focus on building something or more job skills related to coding, 
+however, if you want to take tangents into more abstract topics and the mathematical side of coding,
+ that is fine to. For example, we could take a diversion and do algorithm design [example problem might 
+list sorting or searching lists for data].
+
+Since we are probably not going to do lectures, ask tons of questions. In HTML layout, ask how to do other types
+of layouts (i.e. if we do a single column layout, well how do we do two column or whatever comes to mind)
+
+== Table of Contents ==
+Here is what I was thinking we'd cover. This starts from a very basic markup language,
+moves into making the web page active, and finishes up with server side functionality and 
+data storage. This is a huge amount of information, and I have no idea how long this will take.
+
+  1) Installation
+  2) HTML - Basics
+  3) HTML - CSS
+  4) How Web Apps Work
+  5) JavaScript
+  6) Knockout JS
+  7) LAMP Overview - More Tools
+  8) PHP
+  9) MySQL
+
+= Lesson 1 - Installation = 
+'''Time: 2 hours '''
+
+We are going to start with some basic tools. The tools are NotePad++, Git Hub, and Colabedit. 
+
+== Notepad ++ ==
+''' 10 minutes '''
+Download and install. We'll get more familiar with the editor when we start doing HTML. The only idea
+here is we are going to be doing low-level work (no fancy automated HTML editors here) and we need something
+better then Windows built in editor.
+
+http://notepad-plus-plus.org/
+
+== Git Hub ==
+''' 1.5 hours '''
+
+Version management is the bread and butter of developers. It's a way to put software to a central server (so it's backed up).
+It's a way to keep track of who changed what. It's a way for multiple developers to merge code. For our purposes,
+we can use Git to share code for the actual project, share examples for lessons, etc. 
+
+The trouble with using Git is most developers are somewhat hard core and use it strictly from the command line. I can't 
+even find a simple explanation of it.
+
+http://en.wikipedia.org/wiki/Revision_control
+
+
+=== What is Git? ===
+
+Stores files in a central location. Stores every version of the file since creation. Also supports branching. Also supports 
+local version management separate from the remote. We will try to make as little use of VM as possible to keep things simple.
+
+==== Basics ====
+Remote - The central server where changes are kept
+Clone - Make a copy of the remote server (this copies the entire server and all changes)
+Pull - Download changes from the remote
+Push - Upload your changes to the remote
+Commit - Push a change in to your local repository. Every commit gets a change message
+Checkout - Switch to another branch of the code.
+
+==== Branching ====
+Imaging supporting software where you have a new version of the software coming out, but your boss calls
+and asks you to make a quick fix to the existing software, this is branching. It's usually not good enough
+to only have one version of your software. For what we are doing, we will only ever have one branch.
+
+Example, version 1 would be on branch "version1". Version 2 would be on branch "version2". A developer 
+might be working on version2 but need to fix version 1. So, they would git checkout version1. Make their 
+change, git commit <changed file>, git push (to upload back to the server), and then git checkout version2 to 
+continue working on version2. There is also a merge option were a change is copied from version1 to version2. This
+way, a person doesn't have to make the fix in both places every time.
+
+
+=== Create a Git Hub Account ===
+https://www.github.com
+
+=== Installer for GitHub ===
+https://windows.github.com/
+
+
+
+=== Download Course Content ===
+''Get used to doing a Pull before starting any work.''
+Go to https:/github.com/casper412/aplus and click "Clone to Desktop".
+
+==== Play around ====
+1) Create a file - commit it
+2) Modify the file - and commit it
+3) Push the changes to the file
+4) Send me an email
+5) What files do you see downloaded?
+
+
+== Collabedit ==
+''' 10 Minutes '''
+
+Play around a bit this will allow us to co-edit a piece of coding when we are chatting through an explanation.
+
+http://collabedit.com/

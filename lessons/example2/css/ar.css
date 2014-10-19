@@ -1,0 +1,13 @@
+
+.ar-form-group {
+  margin-top: 2px;
+  padding: 2px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.ar-form-group h1 {
+  color: #555555;
+  font-size: 200%;
+}
