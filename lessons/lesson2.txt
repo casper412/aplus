@@ -1,0 +1,198 @@
+
+= HTML Layout =
+  
+== What is a markup language? ==
+"The term markup is derived from the traditional publishing practice of "marking up" a manuscript, 
+which involves adding handwritten annotations in the form of conventional symbolic printer's instructions 
+in the margins and text of a paper manuscript or printed proof." [Wikipedia]
+
+Another way of putting it is, a language for annotating content with meta-data. The markup tells 
+you something about the content. It might tell you where to put the text, how to style it, 
+relationships in the data, etc. 
+    
+=== Styling example ===
+Let's say you have a warning on a page that you want to stand out. 
+The message might be: "Note: This is important." 
+A marked up version: <b>Note:/<b> This is important. 
+  
+=== Semantic example ===
+
+Matt: A very cool guy
+
+<definition>
+  <term>Matt</term>
+  <meaining>A very cool guy</meaning>
+</definition>
+
+In this second version, we now KNOW you are providing a definition. We don't have to guess it from
+the colon, layout, and context. 
+
+  
+== What is HTML? ==
+Ok, so what is HTML. Hypertext Markup Language. HTML is a defined way of doing markup. Why
+is it important? Every single webpage you look at uses HTML. It is the foundation of how a 
+browser works. You see HTML examples every day! Your webmail, your news, social media, 
+Netflix all use HTML a ton. It is extremely versatile with evolving standards making it 
+even more useful, dynamic, and visually appealing. 
+
+HTML has tags for semantics, style, and structure. The structural tags are becoming far more
+common in favor of pushing the style into CSS (we'll cover that next time), and the semantics
+are being moved to meta-data on the structure.
+
+=== Tags ===
+[http://www.htmlgoodies.com/primers/html/article.php/3478151]
+
+HTML is a tag based language. What it is a tag? We've already seen one.
+
+Full tag:
+<tagname name=value>content</tagname>
+
+The parts of a tag consist of:
+tagname: What is this tag? Is it a structural tag, semantics, or style. Example tag names are
+table (for starting a table of data), font (for setting the font), or dl (for making a definition list),
+and so on. There are something like 90 HTML tags (http://www.w3schools.com/tags/ref_byfunc.asp). Most
+people don't know them all, and most of them have very little use in modern web pages.
+
+attributes: The name=value pair in the example is called an attribute. There can be 0 or more
+attributes on a tag. The attribute has a name and a value. The value can be in single quotes or
+double quotes if it contains spaces or special characters. Good style is to always use the same 
+quote (either double or single) and to always include the quotes.
+
+content: This is what the tag is applied to. In the case of a font tag, the content is the 
+text that has its font set. 
+
+closing tag: Must have the same tagname. Closing tags must always be matched i.e. 1 closing 
+tag for one opening tag. A closing tag never has attributes.
+
+Single tag:
+
+<tag/> - Self closed - i.e. doesn't require a separate closing tag. This may have attributes.
+
+<tag> - Some HTML tags like a line break tag (<br> just inserts a new line) don't require a 
+  closing tag. Newer HTML specifications I think tend to favor minimizing the use of these
+  to push the language toward ever tag being closed.
+  
+=== HTML Document ===
+An HTML document is a full web page. The tags can be nested to create more elaborate structures
+and more elaborate styling and layout.
+
+Let's cover one more thing, comments. HTML comment is <!-- This text is completely skipped. -->
+Comments are neither rendered nor processed in anyway. They are completely skipped.
+
+<!DOCTYPE html> <!-- Doctype tells us this is an HTML document - as apposed to XML or some other markup language -->
+
+<html> <!-- Start and end of every HTML page -->
+  <head> <!-- Section of the document for meta data on the document. Title, keywords to find the document under, and references to other documents. -->
+  
+  </head>
+  
+  <body> <!-- The visual portion of the page -->
+  </body>
+</html>
+
+
+
+==== Head section ====
+<title></title> is used to specify the title of the page.
+<meta charset="utf-8"> meta is for all sorts of meta data. A common one is the character set. 
+  There are different character sets necessary to support other languages. utf-8 is a super common
+  one and for your purposed, you will probably never notice character set issues.
+<link href="css/ar.css" rel="stylesheet"> link is for calling in other documents. Here is a reference to 
+  a stylesheet. We will look at stylesheets next.
+
+==== Body section ====
+Most of the work of an HTML page is in the body. We can do an interactive session on jsfiddle if you want to go 
+through things.
+
+
+Otherwise, here are some examples. You can paste these into 
+[http://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic_document]
+and hit submit.
+
+
+===== Paragraph =====
+Just adds whitespace before and after the paragraph to keep the text separate
+
+<p>This is a paragraph</p>  
+
+===== Table ======
+
+<table border=1>
+  <tr>
+    <th>Col1</th>
+    <th>Col2</th>
+  </tr>
+  <tr>
+    <td>val1</td>
+    <td>val2</td>
+  </tr>
+</table>
+
+
+Review the list, and try tags from every section. This will likely take an hour.
+[http://www.w3schools.com/tags/ref_byfunc.asp]
+
+
+
+===== Span and Div =====
+The span applies a style inline. The div is sorta like a paragraph tag but without the 
+semantics of a paragraph. It is simply a block of text. These are going to be a lot more
+useful when we CSS and will basically be the only tags you ever need when doing advanced CSS.
+
+Span does so little I threw a bit of CSS (the style attribute just to make it do something)
+
+<span style="color: blue; border: 1px solid purple; padding: 2px; ">This is 
+  <span style="color: red; border: 1px solid purple; padding: 2px;">red</span> text.
+</span>
+
+Div does so little I threw a bit of CSS (the style attribute just to make it do something)
+
+<div style="color: blue; border: 1px solid purple; padding: 2px;">
+  This is a block.
+  <div style="color: red; border: 1px solid orange; padding: 2px;">
+    This is a block.
+  </div>
+</div>
+
+
+==== Block versus Inline ====
+A somewhat interesting thing to know about as you get better at styling is the difference between
+block and inline tags. In the span and div example, the only difference between span and div is
+that div's DEFAULT to block layout and span's DEFAULT to inline layout. Here I switched the display
+on the div tag and it is identical to span tags. This sets us up for CSS where you can see 
+all you need is div tags with style information.
+
+
+<div style="color: blue; border: 1px solid purple; padding: 2px; display: inline;">
+  This is 
+  <div style="color: red; border: 1px solid orange; padding: 2px; display: inline;">
+    inline
+  </div>
+  text.
+</div>
+
+
+== Review ==
+We covered what is HTML, what is the basics of tags and HTML documents, and seeded the discussion
+about CSS a bit and more generic tags like DIV and SPAN.
+
+What you should also see, is HTML doesn't DO anything. It is static layout, color, etc. 
+This should make you think, what makes
+a page DO something? Why can I drag things on web pages or mouse over and 
+get pop up pages? Why can I click on things and have something happen?
+
+We also didn't cover forms. How do I set up getting information from the user? Some of the 
+tags are input fields.
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
